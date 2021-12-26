@@ -1,6 +1,7 @@
 package com.codmind.swaggerapi.controllers;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
@@ -51,4 +52,18 @@ public class UserController {
 		return ResponseEntity.ok().build();
 
 	}
+
+	@PostMapping(value = "inverted-sentence")
+	public String invertSentence(String sentence) {
+
+		String[] split = sentence.split(" ");
+		String newSentence = "";
+
+		for (int i = 0; i < split.length; i++) {
+			newSentence = split[i] + " " + newSentence;
+		}
+
+		return newSentence;
+	}
+
 }
