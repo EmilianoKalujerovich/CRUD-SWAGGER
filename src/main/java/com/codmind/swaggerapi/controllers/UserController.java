@@ -1,7 +1,6 @@
 package com.codmind.swaggerapi.controllers;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
@@ -64,6 +63,13 @@ public class UserController {
 		}
 
 		return newSentence;
+	}
+
+	@PostMapping(value = "vowel-count")
+	public int vowelCount(String sentence) {
+
+		return sentence.replaceAll("(?i)[^aeiou]", "").length();
+
 	}
 
 }
