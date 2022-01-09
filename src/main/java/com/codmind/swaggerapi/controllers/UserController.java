@@ -72,4 +72,20 @@ public class UserController {
 
 	}
 
+	@PostMapping(value = "alternate-case")
+	public String alternateCase(String sentence) {
+
+		String result = "";
+		for (char c : sentence.toCharArray()) {
+			if (Character.isUpperCase(c)) {
+				result += Character.toLowerCase(c);
+			} else {
+				result += Character.toUpperCase(c);
+			}
+		}
+
+		return result;
+
+	}
+
 }
